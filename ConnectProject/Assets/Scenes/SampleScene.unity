@@ -716,6 +716,7 @@ MonoBehaviour:
   moveFinished: 0
   startingMoveDist: 1
   movedDistance: 0
+  timeBetweenMoves: 1.5
   speed: 0
 --- !u!65 &1823618525
 BoxCollider:

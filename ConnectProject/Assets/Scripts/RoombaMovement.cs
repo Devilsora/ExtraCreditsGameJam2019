@@ -23,16 +23,18 @@ public class RoombaMovement : MonoBehaviour
   private Vector3 moveWest = Vector3.forward;
 
   public bool isON = false; //starts off until you press its button
-  public bool isMoving = false;
+  public bool isMoving = true;
   public bool moveFinished = false;
 
   public float startingMoveDist = 1f;
   public float movedDistance = 0f;
+  public float timeBetweenMoves = 1.5f;
   public float speed;
+  float moveTimer = 0.0f;
 
-  
+
   // Start is called before the first frame update
-    void Start()
+  void Start()
     {
         
     }
@@ -40,12 +42,29 @@ public class RoombaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+
       speed = startingMoveDist * Time.deltaTime;
         //move 1 grid space per "in game time" if ON
 
       if (isON)
       {
-        isMoving = true;
+        if (moveFinished)
+        {
+          Debug.Log("Move timer: " + moveTimer);
+
+          if (moveTimer >= timeBetweenMoves)
+          {
+            moveTimer = 0.0f;
+            isMoving = true;
+            moveFinished = false;
+          }
+          else
+          {
+            moveTimer += Time.deltaTime;
+          }
+        }
+
         if (isMoving && !moveFinished)
         {
           //keep moving until dist 
@@ -77,12 +96,13 @@ public class RoombaMovement : MonoBehaviour
           if (movedDistance >= startingMoveDist)
           {
             moveFinished = true;
+            isMoving = false;
             movedDistance = 0f;
-          }
-            
-          
 
-        }
+            //start timer until it moves again
+            
+          }
+      }
         //check if current direction is free
         
         
