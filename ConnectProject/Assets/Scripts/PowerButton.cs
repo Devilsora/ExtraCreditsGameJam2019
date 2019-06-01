@@ -17,6 +17,13 @@ public class PowerButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      if (Input.GetKeyDown(KeyCode.KeypadEnter))
+      {
+        movement.isON = !movement.isON;
+        movement.moveFinished = !movement.moveFinished;
+        Debug.Log("Power swapped");
+    }
+
 
       if (Input.GetMouseButtonDown(0))
       {
@@ -28,6 +35,7 @@ public class PowerButton : MonoBehaviour
           if (hit.transform.name == gameObject.name)
           {
             movement.isON = !movement.isON;
+            movement.moveFinished = !movement.moveFinished;
             Debug.Log("Power swapped");
           }
           else

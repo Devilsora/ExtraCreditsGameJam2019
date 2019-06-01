@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class RoombaMovement : MonoBehaviour
@@ -25,12 +27,15 @@ public class RoombaMovement : MonoBehaviour
   public bool isON = false; //starts off until you press its button
   public bool isMoving = true;
   public bool moveFinished = false;
+  public bool checkedNextPositions = false;
 
   public float startingMoveDist = 1f;
   public float movedDistance = 0f;
   public float timeBetweenMoves = 1.5f;
   public float speed;
   float moveTimer = 0.0f;
+
+  
 
 
   // Start is called before the first frame update
@@ -42,8 +47,6 @@ public class RoombaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-
       speed = startingMoveDist * Time.deltaTime;
         //move 1 grid space per "in game time" if ON
 
@@ -51,19 +54,26 @@ public class RoombaMovement : MonoBehaviour
       {
         if (moveFinished)
         {
-          Debug.Log("Move timer: " + moveTimer);
-
           if (moveTimer >= timeBetweenMoves)
           {
             moveTimer = 0.0f;
             isMoving = true;
             moveFinished = false;
+            checkedNextPositions = false;
           }
           else
           {
             moveTimer += Time.deltaTime;
+
+            if (!checkedNextPositions)
+            {
+              or = DetermineOrientation();
+              checkedNextPositions = true;
+            }
           }
         }
+
+        
 
         if (isMoving && !moveFinished)
         {
@@ -104,21 +114,138 @@ public class RoombaMovement : MonoBehaviour
           }
       }
         //check if current direction is free
-        
-        
-
-
       }
 
     }
 
-  public void setOrientation(int newOrientation)
+  public void SetOrientation(int newOrientation)
   {
+    Debug.Log("Changing orientation to: " + (Orientation) newOrientation);
     or = (Orientation)newOrientation;
   }
 
-  public void setOrientation(Orientation newOr)
+  public void SetOrientation(Orientation newOr)
   {
+    Debug.Log("Changing orientation to: " + newOr);
     or = newOr;
   }
+
+  public Orientation DetermineOrientation()
+  {
+    bool[] validOrientations = {false, false, false, false};
+    List<Orientation> possibleOrientations = new List<Orientation>();
+    Orientation nextOrientation = or;
+
+    //Debug.DrawRay(transform.position, moveEast, Color.red);
+    //Debug.DrawRay(transform.position, moveNorth * 1.01f, Color.red);
+    //Debug.DrawRay(transform.position, moveWest, Color.red);
+    //Debug.DrawRay(transform.position, moveSouth, Color.red);
+
+    RaycastHit hit;
+
+    if (Physics.Raycast(transform.position, moveNorth, out hit, 1.01f))
+    {
+      if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
+      {
+        validOrientations[0] = true;
+      }
+      else
+      {
+        Debug.Log("On north tag, hit object with tag " + hit.transform.gameObject.tag);
+      }
+    }
+    else
+    {
+      validOrientations[0] = true;
+    }
+      
+
+    if (Physics.Raycast(transform.position, moveEast, out hit, 1.01f))
+    {
+
+      if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
+      {
+        validOrientations[1] = true;
+      }
+      else
+      {
+        Debug.Log("On east tag, hit object with tag " + hit.transform.gameObject.tag);
+      }
+    }
+    else
+    {
+      validOrientations[1] = true;
+    }
+      
+
+    if (Physics.Raycast(transform.position, moveSouth, out hit, 1.01f))
+    {
+      if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
+      {
+        validOrientations[2] = true;
+      }
+      else
+      {
+        Debug.Log("On south tag, hit object with tag " + hit.transform.gameObject.tag);
+      }
+    }
+    else
+    {
+      validOrientations[2] = true;
+    }
+
+    if (Physics.Raycast(transform.position, moveWest, out hit, 1.01f))
+    {
+      if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
+      {
+        validOrientations[3] = true;
+      }
+      else
+      {
+        Debug.Log("On west tag, hit object with tag " + hit.transform.gameObject.tag);
+      }
+    }
+    else
+    {
+      validOrientations[3] = true;
+    }
+
+    Debug.Log("Valid orientations: " + validOrientations[0].ToString() + "  " + validOrientations[1].ToString() + "   " + validOrientations[2].ToString() + "   " + validOrientations[3].ToString());
+
+    for (int i = 0; i < 4; i++)
+    {
+      if (validOrientations[i])
+      {
+        possibleOrientations.Add((Orientation)i);
+      }
+    }
+
+    if (possibleOrientations.Count == 1)
+      nextOrientation = possibleOrientations[0];
+
+    else if (possibleOrientations.Count > 1 && possibleOrientations.Count < 4)
+    {
+      //go through list of orientations and find which one is closest to the current one
+      for (int i = 0; i < possibleOrientations.Count; i++)
+      {
+        if (nextOrientation == possibleOrientations[i])
+        {
+          break; //don't need to go through and pick other orientations if we already have one that works
+        }
+        else
+        {
+          nextOrientation = (Orientation)possibleOrientations.OrderBy(x => Mathf.Abs(or - x )).First();
+          //(Orientation)possibleOrientations.Min(x => Mathf.Abs((int)x - (int)nextOrientation));
+        }
+      } 
+    }
+    
+    
+    checkedNextPositions = true;
+
+    return nextOrientation;
+  }
+
+  
 }
+
