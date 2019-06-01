@@ -19,10 +19,10 @@ public class RoombaMovement : MonoBehaviour
                           //2 is South (y rotation = 180)
                           //3 is West (y rotation = 270)
 
-  private Vector3 moveNorth = Vector3.right;
-  private Vector3 moveEast = Vector3.back;
-  private Vector3 moveSouth = Vector3.left;
-  private Vector3 moveWest = Vector3.forward;
+  private Vector3 moveNorth = Vector3.forward;
+  private Vector3 moveEast = Vector3.right;
+  private Vector3 moveSouth = Vector3.back;
+  private Vector3 moveWest = Vector3.left;
 
   public bool isON = false; //starts off until you press its button
   public bool isMoving = true;
