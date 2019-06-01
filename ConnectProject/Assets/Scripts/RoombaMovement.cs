@@ -225,22 +225,70 @@ public class RoombaMovement : MonoBehaviour
 
     else if (possibleOrientations.Count > 1 && possibleOrientations.Count < 4)
     {
+      //check for locked in corner cases
+      if (possibleOrientations.Count == 2)
+      {
+        switch (nextOrientation)
+        {
+          case Orientation.North:
+            if ((possibleOrientations[0] == Orientation.South || possibleOrientations[1] == Orientation.South) &&
+                possibleOrientations[0] == Orientation.East || possibleOrientations[1] == Orientation.East)
+            {
+              return Orientation.East;
+            }
+            break;
+
+          case Orientation.East:
+            if ((possibleOrientations[0] == Orientation.South || possibleOrientations[1] == Orientation.South) &&
+                possibleOrientations[0] == Orientation.West || possibleOrientations[1] == Orientation.West)
+            {
+              return Orientation.South;
+            }
+            break;
+
+          case Orientation.South:
+            if ((possibleOrientations[0] == Orientation.North || possibleOrientations[1] == Orientation.North) &&
+                possibleOrientations[0] == Orientation.West || possibleOrientations[1] == Orientation.West)
+            {
+              return Orientation.West;
+            }
+            break;
+
+          case Orientation.West:
+            if ((possibleOrientations[0] == Orientation.North || possibleOrientations[1] == Orientation.North) &&
+                possibleOrientations[0] == Orientation.East || possibleOrientations[1] == Orientation.East)
+            {
+              return Orientation.North;
+            }
+            break;
+        }
+      }
       //go through list of orientations and find which one is closest to the current one
       for (int i = 0; i < possibleOrientations.Count; i++)
       {
         if (nextOrientation == possibleOrientations[i])
         {
+          Debug.Log("Valid direction exists already, use that one: " + nextOrientation);
           break; //don't need to go through and pick other orientations if we already have one that works
         }
         else
         {
-          nextOrientation = (Orientation)possibleOrientations.OrderBy(x => Mathf.Abs(or - x )).First();
+          //nextOrientation = (Orientation) possibleOrientations.Max();
+          
+
+          //nextOrientation = (Orientation)possibleOrientations.Min(x => Mathf.Abs((int)x - (int)nextOrientation));
+
+          //(Orientation)possibleOrientations.OrderBy(x => Mathf.Abs(or - x )).First();
+
           //(Orientation)possibleOrientations.Min(x => Mathf.Abs((int)x - (int)nextOrientation));
         }
-      } 
+      }
+      //nextOrientation = (Orientation)possibleOrientations.Min();
+      nextOrientation = possibleOrientations.OrderBy(newOR => Mathf.Abs(newOR - nextOrientation)).First();
+
     }
     
-    
+    Debug.Log("Chosen orientation: " + nextOrientation);
     checkedNextPositions = true;
 
     return nextOrientation;
