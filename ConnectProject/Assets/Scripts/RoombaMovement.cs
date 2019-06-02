@@ -29,17 +29,18 @@ public class RoombaMovement : MonoBehaviour
   public bool moveFinished = false;
   public bool checkedNextPositions = false;
 
-  public float startingMoveDist = 1f;
+  public float startingMoveDist = 2f;
   public float movedDistance = 0f;
   public float timeBetweenMoves = 1.5f;
   public float speed;
+  public float distCheck = 1f;
   float moveTimer = 0.0f;
 
   
 
 
-  // Start is called before the first frame update
-  void Start()
+    // Start is called before the first frame update
+    void Start()  
     {
         
     }
@@ -47,7 +48,12 @@ public class RoombaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      speed = startingMoveDist * Time.deltaTime;
+      Debug.DrawRay(transform.position, moveEast  * distCheck, Color.red);
+      Debug.DrawRay(transform.position, moveNorth * distCheck, Color.red);
+      Debug.DrawRay(transform.position, moveWest  * distCheck, Color.red);
+      Debug.DrawRay(transform.position, moveSouth * distCheck, Color.red);
+
+    speed = startingMoveDist * Time.deltaTime;
         //move 1 grid space per "in game time" if ON
 
       if (isON)
@@ -143,7 +149,7 @@ public class RoombaMovement : MonoBehaviour
 
     RaycastHit hit;
 
-    if (Physics.Raycast(transform.position, moveNorth, out hit, 1.01f))
+    if (Physics.Raycast(transform.position, moveNorth, out hit, distCheck))
     {
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
@@ -160,7 +166,7 @@ public class RoombaMovement : MonoBehaviour
     }
       
 
-    if (Physics.Raycast(transform.position, moveEast, out hit, 1.01f))
+    if (Physics.Raycast(transform.position, moveEast, out hit, distCheck))
     {
 
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
@@ -178,7 +184,7 @@ public class RoombaMovement : MonoBehaviour
     }
       
 
-    if (Physics.Raycast(transform.position, moveSouth, out hit, 1.01f))
+    if (Physics.Raycast(transform.position, moveSouth, out hit, distCheck))
     {
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
@@ -194,7 +200,7 @@ public class RoombaMovement : MonoBehaviour
       validOrientations[2] = true;
     }
 
-    if (Physics.Raycast(transform.position, moveWest, out hit, 1.01f))
+    if (Physics.Raycast(transform.position, moveWest, out hit, distCheck))
     {
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {

@@ -29,6 +29,10 @@ ModelImporter:
     4300002: windowLight_geo
     4300004: roomWall_geo
     4300006: roomFloor_geo
+    6400000: roomDoor_geo
+    6400002: roomFloor_geo
+    6400004: roomWall_geo
+    6400006: windowLight_geo
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -62,7 +66,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

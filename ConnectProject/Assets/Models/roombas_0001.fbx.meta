@@ -21,6 +21,9 @@ ModelImporter:
     4300000: roombaCircle_geo
     4300002: roombaSemiCircle_geo
     4300004: roombaOcto_geo
+    6400000: roombaCircle_geo
+    6400002: roombaOcto_geo
+    6400004: roombaSemiCircle_geo
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -54,7 +57,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
