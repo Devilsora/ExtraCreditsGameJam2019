@@ -10,6 +10,7 @@ public class FurnitureLogic : MonoBehaviour
     public Material highlighted;
     public Material invalidLocation;
     public FurnitureItemButtonLogic parentBtn;
+    public AudioSource FurnitureSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +71,7 @@ public class FurnitureLogic : MonoBehaviour
           if (GetComponent<MeshRenderer>().material != invalidLocation)
           {
             isSelected = false;
+            FurnitureSpawn.Play();
           }
             
         }
