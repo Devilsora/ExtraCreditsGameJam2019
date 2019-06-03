@@ -5,6 +5,7 @@ using UnityEngine;
 public class FurnitureLogic : MonoBehaviour
 {
     public bool isSelected;
+    public bool canPlace;
     public Material original;
     public Material highlighted;
     public Material invalidLocation;
@@ -14,6 +15,7 @@ public class FurnitureLogic : MonoBehaviour
     void Start()
     {
       original = GetComponent<MeshRenderer>().material;
+      gameObject.transform.rotation = Quaternion.identity;
     }
 
     // Update is called once per frame
@@ -21,9 +23,20 @@ public class FurnitureLogic : MonoBehaviour
     {
       if (isSelected)
       {
+        canPlace = true;
+        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, gameObject.GetComponent<Renderer>().bounds.extents.z);
 
+        foreach (Collider col in colliders)
+        {
+          if (col.gameObject.tag == "Furniture" || col.gameObject.tag == "Wal")
+          {
+            Debug.Log("Found thing you can't place onto");
+            canPlace = false;
+            break;
+          }
+        }
         //check if location is valid first, otherwise make self invalid
-        if (Physics.OverlapSphere(gameObject.transform.position, 5).Length > 0)
+        if (canPlace == false)
         {
           GetComponent<MeshRenderer>().material = invalidLocation;
         }
