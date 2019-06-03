@@ -37,9 +37,6 @@ public class RoombaMovement : MonoBehaviour
   public float distCheck = 1.5f;
   float moveTimer = 0.0f;
 
-  
-
-
     // Start is called before the first frame update
     void Start()  
     {
@@ -155,6 +152,11 @@ public class RoombaMovement : MonoBehaviour
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
         validOrientations[0] = true;
+      }
+      else if (hit.transform.gameObject.tag == "FearFurniture")
+      {
+        isAfraid = true;
+        
       }
       else
       {

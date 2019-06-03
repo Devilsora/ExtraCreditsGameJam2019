@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class FurnitureLogic : MonoBehaviour
 {
-
     public bool isSelected;
     public Material original;
     public Material highlighted;
-    //public material invalidLocation?
+    public Material invalidLocation;
     public FurnitureItemButtonLogic parentBtn;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+      original = GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -22,8 +21,16 @@ public class FurnitureLogic : MonoBehaviour
     {
       if (isSelected)
       {
-        //can control with WASD/arrow keys
-        GetComponent<MeshRenderer>().material = highlighted;
+
+        //check if location is valid first, otherwise make self invalid
+        if (Physics.OverlapSphere(gameObject.transform.position, 5).Length > 0)
+        {
+          GetComponent<MeshRenderer>().material = invalidLocation;
+        }
+        else
+        {
+          GetComponent<MeshRenderer>().material = highlighted;
+        }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -47,9 +54,11 @@ public class FurnitureLogic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-          //check if location is valid first, otherwise make self invalid
-
-          isSelected = false;
+          if (GetComponent<MeshRenderer>().material != invalidLocation)
+          {
+            isSelected = false;
+          }
+            
         }
       }
       else
