@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1333,7 +1333,6 @@ GameObject:
   m_Component:
   - component: {fileID: 760055158}
   - component: {fileID: 760055160}
-  - component: {fileID: 760055159}
   m_Layer: 0
   m_Name: OBJCamera
   m_TagString: Untagged
@@ -1355,14 +1354,6 @@ Transform:
   m_Father: {fileID: 1743412464}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 36.074, y: 0, z: 0}
---- !u!81 &760055159
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760055157}
-  m_Enabled: 1
 --- !u!20 &760055160
 Camera:
   m_ObjectHideFlags: 0
@@ -1772,7 +1763,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1231351945}
   - component: {fileID: 1231351947}
-  - component: {fileID: 1231351946}
   m_Layer: 5
   m_Name: UICamera
   m_TagString: Untagged
@@ -1794,14 +1784,6 @@ Transform:
   m_Father: {fileID: 534669905}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
---- !u!81 &1231351946
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231351944}
-  m_Enabled: 1
 --- !u!20 &1231351947
 Camera:
   m_ObjectHideFlags: 0
@@ -2044,109 +2026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d2eb90b9d89cd4eafa735eb0f7450b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placedFurnitureParent: {fileID: 0}
-  maxQuantity: 0
-  usedQuantity: 0
-  quantityText: {fileID: 1254291895}
-  itemImage: {fileID: 743142444}
---- !u!114 &1685358934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685358931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1495344676}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!222 &1685358935
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685358931}
-  m_CullTransparentMesh: 0
---- !u!114 &1685358936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685358931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1685358933}
-          m_MethodName: PointerEnter
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1685358933}
-          m_MethodName: PointerExit
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1001 &1708864252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3300,6 +3179,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8024587524134452183, guid: 8dc56804bad0ae64b9712f74b89f9683,
+        type: 3}
+      propertyPath: itemImage
+      value: 
+      objectReference: {fileID: 1743412463}
+    - target: {fileID: 8024587524134452183, guid: 8dc56804bad0ae64b9712f74b89f9683,
+        type: 3}
+      propertyPath: furnitureItem
+      value: 
+      objectReference: {fileID: 4344994574314181616, guid: ea1b9be22e91c304380c743d11ffd956,
+        type: 3}
+    - target: {fileID: 8024587524134452183, guid: 8dc56804bad0ae64b9712f74b89f9683,
+        type: 3}
+      propertyPath: maxQuantity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8024587524134452180, guid: 8dc56804bad0ae64b9712f74b89f9683,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3329,22 +3224,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8024587524134452183, guid: 8dc56804bad0ae64b9712f74b89f9683,
-        type: 3}
-      propertyPath: itemImage
-      value: 
-      objectReference: {fileID: 1743412463}
-    - target: {fileID: 8024587524134452183, guid: 8dc56804bad0ae64b9712f74b89f9683,
-        type: 3}
-      propertyPath: furnitureItem
-      value: 
-      objectReference: {fileID: 4344994574314181616, guid: ea1b9be22e91c304380c743d11ffd956,
-        type: 3}
-    - target: {fileID: 8024587524134452183, guid: 8dc56804bad0ae64b9712f74b89f9683,
-        type: 3}
-      propertyPath: maxQuantity
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8024587524134452186, guid: 8dc56804bad0ae64b9712f74b89f9683,
         type: 3}
