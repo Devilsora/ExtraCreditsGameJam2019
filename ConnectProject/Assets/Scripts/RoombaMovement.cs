@@ -37,8 +37,10 @@ public class RoombaMovement : MonoBehaviour
   public float distCheck = 1.5f;
   float moveTimer = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()  
+  public AudioSource DirectionChangeSound;
+
+  // Start is called before the first frame update
+  void Start()  
     {
         
     }
@@ -71,9 +73,15 @@ public class RoombaMovement : MonoBehaviour
 
             if (!checkedNextPositions)
             {
+              Orientation prev = or;
               or = DetermineOrientation();
               checkedNextPositions = true;
-            }
+
+              if (prev != or)
+              {
+                DirectionChangeSound.Play();
+              }
+          }
           }
         }
 
