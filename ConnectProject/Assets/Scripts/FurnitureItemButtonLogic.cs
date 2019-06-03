@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class FurnitureItemButtonLogic : MonoBehaviour
 {
-    //public GameObject furnitureItem; //furniture spawned
+    public GameObject furnitureItem; //furniture spawned
     public GameObject placedFurnitureParent;
     public int maxQuantity;
     public int usedQuantity;
@@ -25,7 +25,10 @@ public class FurnitureItemButtonLogic : MonoBehaviour
       placedFurnitureParent = GameObject.Find("PlacedFurniture");
       
 
-      parentButton.onClick.AddListener(FurnitureItemClick);
+      parentButton.onClick.AddListener(() =>
+      {
+        FurnitureItemClick();
+      });
       itemImageChild = itemImage.transform.GetChild(0).gameObject;
       itemImageChild.transform.rotation = Quaternion.identity;
       
@@ -35,10 +38,9 @@ public class FurnitureItemButtonLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+    quantityText.text = (maxQuantity - usedQuantity).ToString();
 
-
-      if (usedQuantity > maxQuantity)
+    if (usedQuantity > maxQuantity)
       {
         parentButton.interactable = false;
       }
@@ -50,11 +52,12 @@ public class FurnitureItemButtonLogic : MonoBehaviour
 
     public void FurnitureItemClick()
     {
+      Debug.Log("Clicked");
       if (usedQuantity < maxQuantity)
       {
         usedQuantity++;
 
-        GameObject furniturePrefab = Instantiate(itemImageChild, placedFurnitureParent.transform);
+        GameObject furniturePrefab = Instantiate(furnitureItem, placedFurnitureParent.transform);
         furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
         furniturePrefab.GetComponent<FurnitureLogic>().parentBtn = this;
 
@@ -63,6 +66,23 @@ public class FurnitureItemButtonLogic : MonoBehaviour
       //spawn item in parented to enviornment
       //positioned for room center at x = -1.92, y = -9.32, z = 0
     }
+
+  public void FurnitureItemClick(BaseEventData eventData)
+  {
+    Debug.Log("Clicked");
+    if (usedQuantity < maxQuantity)
+    {
+      usedQuantity++;
+
+      GameObject furniturePrefab = Instantiate(furnitureItem, placedFurnitureParent.transform);
+      furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
+      furniturePrefab.GetComponent<FurnitureLogic>().parentBtn = this;
+
+    }
+
+    //spawn item in parented to enviornment
+    //positioned for room center at x = -1.92, y = -9.32, z = 0
+  }
 
   public void PointerEnter(BaseEventData eventData)
   {
