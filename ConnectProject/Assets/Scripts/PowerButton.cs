@@ -6,6 +6,8 @@ public class PowerButton : MonoBehaviour
 {
   public GameObject roomba;
   private RoombaMovement movement;
+    public AudioSource OnSound;
+    public AudioSource OffSound;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,10 @@ public class PowerButton : MonoBehaviour
             movement.isON = !movement.isON;
             movement.moveFinished = !movement.moveFinished;
             Debug.Log("Power swapped");
+            if (movement.isON == true)
+                OnSound.Play();
+            else
+                OffSound.Play();
           }
           else
           {
