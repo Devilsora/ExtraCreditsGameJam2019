@@ -28,12 +28,13 @@ public class RoombaMovement : MonoBehaviour
   public bool isMoving = true;
   public bool moveFinished = false;
   public bool checkedNextPositions = false;
+  public bool isAfraid = false;
 
   public float startingMoveDist = 2f;
   public float movedDistance = 0f;
   public float timeBetweenMoves = 1.5f;
   public float speed;
-  public float distCheck = 1f;
+  public float distCheck = 1.5f;
   float moveTimer = 0.0f;
 
   
