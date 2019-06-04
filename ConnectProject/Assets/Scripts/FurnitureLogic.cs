@@ -6,6 +6,7 @@ public class FurnitureLogic : MonoBehaviour
 {
     public bool isSelected;
     public bool canPlace;
+  public float clickDelta = 0.35f;
     public Material original;
     public Material highlighted;
     public Material invalidLocation;
@@ -103,7 +104,7 @@ public class FurnitureLogic : MonoBehaviour
 
           if (Physics.Raycast(ray, out hit))
           {
-            if (hit.transform.name == gameObject.name)
+            if (hit.transform.name == gameObject.name || hit.transform.gameObject.transform.parent == gameObject.transform)
             {
               parentBtn.usedQuantity--;
               Destroy(gameObject);
@@ -118,21 +119,24 @@ public class FurnitureLogic : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-          RaycastHit hit;
-
-          if (Physics.Raycast(ray, out hit))
+          if (Input.GetMouseButtonDown(0))
           {
-            if (hit.transform.name == gameObject.name)
-            {
-              isSelected = true;
-            }
-            else
-            {
-              Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name + " in furniturelogic");
-            }
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-          }
+            if (Physics.Raycast(ray, out hit))
+            {
+              if (hit.transform.name == gameObject.name || hit.transform.gameObject.transform.parent == gameObject.transform)
+              {
+                isSelected = true;
+              }
+              else
+              {
+                Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name + " in furniturelogic");
+              }
+
+            }
+          } 
         }
 
       }

@@ -376,7 +376,10 @@ public class RoombaMovement : MonoBehaviour
     if (collider.gameObject.tag == "Dirt")
     {
       Debug.Log("Ran into dirt");
-      dirtCleanSound.Play();
+      if (collider.gameObject.GetComponent<SpriteRenderer>().enabled)
+      {
+        dirtCleanSound.Play();
+      }
     }
     else
     {
