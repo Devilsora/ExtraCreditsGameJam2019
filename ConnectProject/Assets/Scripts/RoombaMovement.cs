@@ -28,6 +28,9 @@ public class RoombaMovement : MonoBehaviour
 
   public Vector3[] orientationVectors = { Vector3.forward, Vector3.right, Vector3.back, Vector3.left};
 
+  public Vector3[] orientationEulers =
+    {Vector3.zero, new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0)};
+
   public bool isON = false; //starts off until you press its button
   public bool isMoving = true;
   public bool moveFinished = false;
@@ -89,6 +92,7 @@ public class RoombaMovement : MonoBehaviour
 
               if (prev != or)
               {
+                transform.eulerAngles = orientationEulers[(int) or];
                 DirectionChangeSound.Play();
               }
           }
@@ -165,11 +169,22 @@ public class RoombaMovement : MonoBehaviour
 
     RaycastHit hit;
 
+    if (isAfraid)
+    {
+      if (!Physics.Raycast(transform.position, orientationVectors[(int) or], out hit, distCheck))
+      {
+        return or;
+      }
+    }
+
+
     if (Physics.Raycast(transform.position, moveNorth, out hit, distCheck))
     {
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
         validOrientations[0] = true;
+        if (isAfraid)
+          isAfraid = false;
       }
       else
       {
@@ -188,6 +203,8 @@ public class RoombaMovement : MonoBehaviour
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
         validOrientations[1] = true;
+        if (isAfraid)
+          isAfraid = false;
       }
       else
       {
@@ -205,6 +222,8 @@ public class RoombaMovement : MonoBehaviour
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
         validOrientations[2] = true;
+        if (isAfraid)
+          isAfraid = false;
       }
       else
       {
@@ -221,6 +240,8 @@ public class RoombaMovement : MonoBehaviour
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
         validOrientations[3] = true;
+        if (isAfraid)
+          isAfraid = false;
       }
       else
       {
@@ -238,10 +259,7 @@ public class RoombaMovement : MonoBehaviour
       if (hit.transform.gameObject.tag == "FearFurniture")
       {
         isAfraid = true;
-      }
-      else
-      {
-        isAfraid = false;
+        AfraidSound.Play();
       }
     }
     else
@@ -264,7 +282,6 @@ public class RoombaMovement : MonoBehaviour
 
     if (isAfraid)
     {
-      AfraidSound.Play();
       switch (or)
       {
         case Orientation.North:

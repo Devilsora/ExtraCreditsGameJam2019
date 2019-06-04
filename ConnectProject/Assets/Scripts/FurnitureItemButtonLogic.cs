@@ -12,6 +12,7 @@ public class FurnitureItemButtonLogic : MonoBehaviour
     public GameObject placedFurnitureParent;
     public int maxQuantity;
     public int usedQuantity;
+    public float itemPreferredHeight;
     public TextMeshProUGUI quantityText;
     private Button parentButton;
     public GameObject itemImage;
@@ -57,10 +58,9 @@ public class FurnitureItemButtonLogic : MonoBehaviour
       {
         usedQuantity++;
 
-        GameObject furniturePrefab = Instantiate(furnitureItem, placedFurnitureParent.transform);
-        furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
+        GameObject furniturePrefab = Instantiate(furnitureItem, placedFurnitureParent.transform); //new Vector3(placedFurnitureParent.transform.position.x, 15, placedFurnitureParent.transform.position.z), Quaternion.identity, 
+      furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
         furniturePrefab.GetComponent<FurnitureLogic>().parentBtn = this;
-
       }
 
       //spawn item in parented to enviornment

@@ -52,6 +52,7 @@ public class DirtManager : MonoBehaviour
         Debug.Log("All clean");
         finishSound.Play();
         roomba.GetComponent<RoombaMovement>().isON = false;
+        victoryScreen.SetActive(true);
 
         //display next level screen
       }

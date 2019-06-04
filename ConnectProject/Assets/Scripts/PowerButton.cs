@@ -22,63 +22,79 @@ public class PowerButton : MonoBehaviour
     Debug.Log("Name: BUTTON");
   }
 
-    // Update is called once per frame
-    void Update()
+  public void ToggleRoombaStatus()
+  {
+    movement.isON = !movement.isON;
+    movement.moveFinished = !movement.moveFinished;
+    if (movement.isON)
     {
-      if (Input.GetKeyDown(KeyCode.KeypadEnter))
-      {
-        movement.isON = !movement.isON;
-        movement.moveFinished = !movement.moveFinished;
-        Debug.Log("Power swapped");
+      OnSound.Play();
+      ActiveSound.Play();
     }
-
-
-      if (Input.GetMouseButtonDown(0))
-      {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-          if (hit.transform.name == "PowerBtn")
-          {
-            movement.isON = !movement.isON;
-            movement.moveFinished = !movement.moveFinished;
-            Debug.Log("Power swapped");
-            if (movement.isON)
+    else
+    {
+      OffSound.Play();
+      ActiveSound.Stop();
+    }
+  }
+  // Update is called once per frame
+  void Update()
+    {
+      #if UNITY_EDITOR
+          if (Input.GetKeyDown(KeyCode.KeypadEnter))
             {
-              OnSound.Play();
-              ActiveSound.Play();
+              movement.isON = !movement.isON;
+              movement.moveFinished = !movement.moveFinished;
+              Debug.Log("Power swapped");
             }
-            else
-            {
-              OffSound.Play();
-              ActiveSound.Stop();
-            }
-          }
-          else if (hit.transform.GetChild(hit.transform.childCount - 1).name == "PowerBtn")
-          {
-            movement.isON = !movement.isON;
-            movement.moveFinished = !movement.moveFinished;
-            Debug.Log("Power swapped");
-            if (movement.isON)
-            {
-              OnSound.Play();
-              ActiveSound.Play();
-            }
-            else
-            {
-              OffSound.Play();
-              ActiveSound.Stop();
-            }
-        }
-          else
-          {
-            Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name);
-          }
+      #endif
 
-        }
-      }
+      //if (Input.GetMouseButtonDown(0))
+      //{
+      //  Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      //  RaycastHit hit;
+      //
+      //  if (Physics.Raycast(ray, out hit))
+      //  {
+      //    if (hit.transform.name == "PowerBtn")
+      //    {
+      //      movement.isON = !movement.isON;
+      //      movement.moveFinished = !movement.moveFinished;
+      //      Debug.Log("Power swapped");
+      //      if (movement.isON)
+      //      {
+      //        OnSound.Play();
+      //        ActiveSound.Play();
+      //      }
+      //      else
+      //      {
+      //        OffSound.Play();
+      //        ActiveSound.Stop();
+      //      }
+      //    }
+      //    else if (hit.transform.GetChild(hit.transform.childCount - 1).name == "PowerBtn")
+      //    {
+      //      movement.isON = !movement.isON;
+      //      movement.moveFinished = !movement.moveFinished;
+      //      Debug.Log("Power swapped");
+      //      if (movement.isON)
+      //      {
+      //        OnSound.Play();
+      //        ActiveSound.Play();
+      //      }
+      //      else
+      //      {
+      //        OffSound.Play();
+      //        ActiveSound.Stop();
+      //      }
+      //  }
+      //    else
+      //    {
+      //      Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name);
+      //    }
+      //
+      //  }
+      //}
       
     }
 }
