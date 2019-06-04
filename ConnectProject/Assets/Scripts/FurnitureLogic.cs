@@ -15,7 +15,7 @@ public class FurnitureLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      original = GetComponent<MeshRenderer>().material;
+      //original = GetComponent<MeshRenderer>().material;
       gameObject.transform.rotation = Quaternion.identity;
     }
 
@@ -39,21 +39,21 @@ public class FurnitureLogic : MonoBehaviour
         //check if location is valid first, otherwise make self invalid
         if (canPlace == false)
         {
-          GetComponent<MeshRenderer>().material = invalidLocation;
+          //GetComponent<MeshRenderer>().material = invalidLocation;
         }
         else
         {
-          GetComponent<MeshRenderer>().material = highlighted;
+          //GetComponent<MeshRenderer>().material = highlighted;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-          transform.position += Vector3.back * 5;
+          transform.position += Vector3.back * 6;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-        transform.position += Vector3.forward * 5;
+          transform.position += Vector3.forward * 6;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -73,12 +73,11 @@ public class FurnitureLogic : MonoBehaviour
             isSelected = false;
             FurnitureSpawn.Play();
           }
-            
         }
       }
       else
       {
-        GetComponent<MeshRenderer>().material = original;
+        //GetComponent<MeshRenderer>().material = original;
 
         if (Input.GetMouseButtonDown(1))
         {

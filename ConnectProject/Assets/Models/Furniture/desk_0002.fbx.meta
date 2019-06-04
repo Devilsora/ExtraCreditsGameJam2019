@@ -1,51 +1,25 @@
 fileFormatVersion: 2
-guid: a68f4d27973172e43bdac43118ab942e
+guid: f209b2b4269412c43a964bf3a124cc57
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: console_geo
-    100002: //RootNode
-    100004: eCentre_collider
-    100006: eCentre_geo
-    100008: eCentreDesk_geo
-    100010: monitor_geo
-    100012: pCube14
-    100014: pCube17
-    400000: console_geo
-    400002: //RootNode
-    400004: eCentre_collider
-    400006: eCentre_geo
-    400008: eCentreDesk_geo
-    400010: monitor_geo
-    400012: pCube14
-    400014: pCube17
-    2100000: black
-    2100002: lambert1
-    2100004: darkGrey
-    2300000: console_geo
-    2300002: eCentre_collider
-    2300004: eCentreDesk_geo
-    2300006: monitor_geo
-    2300008: pCube14
-    2300010: pCube17
-    3300000: console_geo
-    3300002: eCentre_collider
-    3300004: eCentreDesk_geo
-    3300006: monitor_geo
-    3300008: pCube14
-    3300010: pCube17
-    4300000: console_geo
-    4300002: eCentreDesk_geo
-    4300004: monitor_geo
-    4300006: pCube14
-    4300008: pCube17
-    4300010: eCentre_collider
-    6400000: console_geo
-    6400002: eCentre_collider
-    6400004: eCentreDesk_geo
-    6400006: monitor_geo
-    6400008: pCube14
-    6400010: pCube17
+    100000: //RootNode
+    100002: desk_collider
+    100004: desk_geo
+    400000: //RootNode
+    400002: desk_collider
+    400004: desk_geo
+    2100000: darkGrey
+    2100002: black
+    2100004: lambert1
+    2100006: keyboardNM_mtl
+    2100008: pasted__table_mtlTemp
+    2300000: desk_collider
+    2300002: desk_geo
+    3300000: desk_collider
+    3300002: desk_geo
+    4300000: desk_geo
+    4300002: desk_collider
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -79,7 +53,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

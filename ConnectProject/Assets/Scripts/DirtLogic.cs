@@ -12,8 +12,8 @@ public class DirtLogic : MonoBehaviour
     private ParticleSystem particles;
     public AudioSource dirtCleanSound;
 
-    // Start is called before the first frame update
-    void Start()
+  // Start is called before the first frame update
+  void Start()
     {
         
     }

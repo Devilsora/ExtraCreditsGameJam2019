@@ -1,52 +1,45 @@
 fileFormatVersion: 2
-guid: db4731ce3e135d84faa8f07f2079a9ec
+guid: a3b12aa6a3fd1504ea96b14341462b15
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: bed_collider
-    100004: bed_geo
-    100006: bedFrame_geo
-    100008: duvet_geo
-    100010: duvetFolded_geo
-    100012: mattress_geo
-    100014: pillow_geo
-    400000: //RootNode
-    400002: bed_collider
-    400004: bed_geo
-    400006: bedFrame_geo
-    400008: duvet_geo
-    400010: duvetFolded_geo
-    400012: mattress_geo
-    400014: pillow_geo
-    2100000: white
-    2100002: black
-    2100004: lambert1
-    2100006: darkGrey
-    2300000: bed_collider
-    2300002: bedFrame_geo
-    2300004: duvet_geo
-    2300006: duvetFolded_geo
-    2300008: mattress_geo
-    2300010: pillow_geo
-    3300000: bed_collider
-    3300002: bedFrame_geo
-    3300004: duvet_geo
-    3300006: duvetFolded_geo
-    3300008: mattress_geo
-    3300010: pillow_geo
-    4300000: pillow_geo
-    4300002: bedFrame_geo
-    4300004: mattress_geo
-    4300006: duvet_geo
-    4300008: duvetFolded_geo
-    4300010: bed_collider
-    6400000: bed_collider
-    6400002: bedFrame_geo
-    6400004: duvet_geo
-    6400006: duvetFolded_geo
-    6400008: mattress_geo
-    6400010: pillow_geo
+    100000: console_geo
+    100002: //RootNode
+    100004: eCentre_collider
+    100006: eCentre_geo
+    100008: eCentreDesk_geo
+    100010: monitor_geo
+    100012: pCube14
+    100014: pCube17
+    400000: console_geo
+    400002: //RootNode
+    400004: eCentre_collider
+    400006: eCentre_geo
+    400008: eCentreDesk_geo
+    400010: monitor_geo
+    400012: pCube14
+    400014: pCube17
+    2100000: black
+    2100002: lambert1
+    2100004: darkGrey
+    2300000: console_geo
+    2300002: eCentre_collider
+    2300004: eCentreDesk_geo
+    2300006: monitor_geo
+    2300008: pCube14
+    2300010: pCube17
+    3300000: console_geo
+    3300002: eCentre_collider
+    3300004: eCentreDesk_geo
+    3300006: monitor_geo
+    3300008: pCube14
+    3300010: pCube17
+    4300000: console_geo
+    4300002: eCentreDesk_geo
+    4300004: monitor_geo
+    4300006: pCube14
+    4300008: pCube17
+    4300010: eCentre_collider
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -80,7 +73,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

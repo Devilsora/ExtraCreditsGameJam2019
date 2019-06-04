@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 8f48d568866e3214c91ebedd92eab689
+guid: eddb318c5d9c9524c83e340743df1b1c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: clown_collider
-    100004: clown_geo
-    100006: clownCentrePivot_geo
-    100008: clownGridPivotgeo
-    400000: //RootNode
-    400002: clown_collider
-    400004: clown_geo
-    400006: clownCentrePivot_geo
-    400008: clownGridPivotgeo
-    2100000: darkGrey
-    2100002: white
-    2100004: quadSphere_02_Med_initialShadingGroup1
-    2100006: black
-    2100008: lambert1
-    2300000: clown_collider
-    2300002: clown_geo
-    3300000: clown_collider
-    3300002: clown_geo
-    4300000: clown_geo
-    4300002: clown_collider
-    6400000: clown_collider
-    6400002: clown_geo
+    100000: chair_collider
+    100002: //RootNode
+    100004: chairB_geo
+    100006: furnitures
+    400000: chair_collider
+    400002: //RootNode
+    400004: chairB_geo
+    400006: furnitures
+    2100000: lambert1
+    2100002: black
+    2100004: darkGrey
+    2300000: chair_collider
+    2300002: chairB_geo
+    3300000: chair_collider
+    3300002: chairB_geo
+    4300000: chair_collider
+    4300002: chairB_geo
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -59,7 +53,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

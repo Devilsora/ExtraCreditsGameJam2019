@@ -41,8 +41,13 @@ public class RoombaMovement : MonoBehaviour
   public float distCheck = 1.5f;
   float moveTimer = 0.0f;
 
+  //valid z values, 23,17,11...
+  //valid x = 19, 13.5, 
+  
+
   public AudioSource DirectionChangeSound;
   public AudioSource AfraidSound;
+  public AudioSource dirtCleanSound;
 
   // Start is called before the first frame update
   void Start()  

@@ -1,47 +1,25 @@
 fileFormatVersion: 2
-guid: aaa1878fbc4dbf542bd5ea9ea8d174d8
+guid: 0e18d43165ab1424283ab0b3b935f7c9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: desk_collider
-    100004: desk_geo
-    100006: deskTable_geo
-    100008: laptiop_geo
-    100010: mug_geo
-    100012: pen_geo
+    100002: clown_collider
+    100004: clown_geo
     400000: //RootNode
-    400002: desk_collider
-    400004: desk_geo
-    400006: deskTable_geo
-    400008: laptiop_geo
-    400010: mug_geo
-    400012: pen_geo
+    400002: clown_collider
+    400004: clown_geo
     2100000: darkGrey
-    2100002: black
-    2100004: lambert1
-    2100006: keyboardNM_mtl
-    2100008: pasted__table_mtlTemp
-    2300000: desk_collider
-    2300002: deskTable_geo
-    2300004: laptiop_geo
-    2300006: mug_geo
-    2300008: pen_geo
-    3300000: desk_collider
-    3300002: deskTable_geo
-    3300004: laptiop_geo
-    3300006: mug_geo
-    3300008: pen_geo
-    4300000: deskTable_geo
-    4300002: laptiop_geo
-    4300004: mug_geo
-    4300006: pen_geo
-    4300008: desk_collider
-    6400000: desk_collider
-    6400002: deskTable_geo
-    6400004: laptiop_geo
-    6400006: mug_geo
-    6400008: pen_geo
+    2100002: white
+    2100004: quadSphere_02_Med_initialShadingGroup1
+    2100006: black
+    2100008: lambert1
+    2300000: clown_collider
+    2300002: clown_geo
+    3300000: clown_collider
+    3300002: clown_geo
+    4300000: clown_geo
+    4300002: clown_collider
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -75,7 +53,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
