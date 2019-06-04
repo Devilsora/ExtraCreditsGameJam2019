@@ -26,6 +26,8 @@ public class RoombaMovement : MonoBehaviour
   private Vector3 moveSouth = Vector3.back;
   private Vector3 moveWest = Vector3.left;
 
+  public Vector3[] orientationVectors = { Vector3.forward, Vector3.right, Vector3.back, Vector3.left};
+
   public bool isON = false; //starts off until you press its button
   public bool isMoving = true;
   public bool moveFinished = false;
@@ -163,11 +165,6 @@ public class RoombaMovement : MonoBehaviour
       {
         validOrientations[0] = true;
       }
-      else if (hit.transform.gameObject.tag == "FearFurniture")
-      {
-        isAfraid = true;
-        fearOrientation = Orientation.North;
-      }
       else
       {
         Debug.Log("On north tag, hit object with tag " + hit.transform.gameObject.tag);
@@ -186,10 +183,6 @@ public class RoombaMovement : MonoBehaviour
       {
         validOrientations[1] = true;
       }
-      else if (hit.transform.gameObject.tag == "FearFurniture")
-      {
-        isAfraid = true;
-      }
       else
       {
         Debug.Log("On east tag, hit object with tag " + hit.transform.gameObject.tag);
@@ -207,10 +200,6 @@ public class RoombaMovement : MonoBehaviour
       {
         validOrientations[2] = true;
       }
-      else if (hit.transform.gameObject.tag == "FearFurniture")
-      {
-        isAfraid = true;
-      }
       else
       {
         Debug.Log("On south tag, hit object with tag " + hit.transform.gameObject.tag);
@@ -227,10 +216,6 @@ public class RoombaMovement : MonoBehaviour
       {
         validOrientations[3] = true;
       }
-      else if (hit.transform.gameObject.tag == "FearFurniture")
-      {
-        isAfraid = true;
-      }
       else
       {
         Debug.Log("On west tag, hit object with tag " + hit.transform.gameObject.tag);
@@ -239,6 +224,18 @@ public class RoombaMovement : MonoBehaviour
     else
     {
       validOrientations[3] = true;
+    }
+
+    if (Physics.Raycast(transform.position, orientationVectors[(int)or], out hit, distCheck))
+    {
+      if (hit.transform.gameObject.tag == "FearFurniture")
+      {
+        isAfraid = true;
+      }
+      else
+      {
+        isAfraid = false;
+      }
     }
 
     Debug.Log("Valid orientations: " + validOrientations[0].ToString() + "  " + validOrientations[1].ToString() + "   " + validOrientations[2].ToString() + "   " + validOrientations[3].ToString());
