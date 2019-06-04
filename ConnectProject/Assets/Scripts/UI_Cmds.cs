@@ -28,8 +28,29 @@ public class UI_Cmds : MonoBehaviour
         !GameObject.Find("Roomba").GetComponent<RoombaMovement>().isON;
     }
 
-  public void GoToMainMenu()
-  {
-    SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
-  }
+    public void GoToMainMenu()
+    {
+      SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+    }
+
+    public void ExitScreen(GameObject screen)
+    {
+      screen.SetActive(false);
+    }
+
+    public void OpenScreen(GameObject screen)
+    {
+      screen.SetActive(true);
+    }
+
+    public void Play()
+    {
+      SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+    }
+
+    public void QuitGame()
+    {
+      Application.Quit();
+    }
+
 }

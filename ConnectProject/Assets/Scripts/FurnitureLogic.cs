@@ -49,22 +49,22 @@ public class FurnitureLogic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-          transform.position += Vector3.back * 5f;
+          transform.position += Vector3.back * 5.70439f;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-          transform.position += Vector3.forward * 5f;
+          transform.position += Vector3.forward * 5.70439f;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-          transform.position += Vector3.right * 5f;
+          transform.position += Vector3.right * 5.70439f;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-          transform.position += Vector3.left * 5f;
+          transform.position += Vector3.left * 5.70439f;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
