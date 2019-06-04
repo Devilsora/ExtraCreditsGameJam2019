@@ -18,6 +18,8 @@ public class FurnitureItemButtonLogic : MonoBehaviour
     public GameObject itemImage;
     GameObject itemImageChild;
 
+    public Vector3 adjustmentOnObj;
+
   // Start is called before the first frame update
   void Start()
     {
@@ -53,13 +55,14 @@ public class FurnitureItemButtonLogic : MonoBehaviour
 
     public void FurnitureItemClick()
     {
-      Debug.Log("Clicked");
+      //Debug.Log("Clicked");
       if (usedQuantity < maxQuantity)
       {
         usedQuantity++;
 
         GameObject furniturePrefab = Instantiate(furnitureItem, placedFurnitureParent.transform); //new Vector3(placedFurnitureParent.transform.position.x, 15, placedFurnitureParent.transform.position.z), Quaternion.identity, 
-      furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
+        furniturePrefab.transform.position += adjustmentOnObj;
+        furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
         furniturePrefab.GetComponent<FurnitureLogic>().parentBtn = this;
       }
 
@@ -75,6 +78,9 @@ public class FurnitureItemButtonLogic : MonoBehaviour
       usedQuantity++;
 
       GameObject furniturePrefab = Instantiate(furnitureItem, placedFurnitureParent.transform);
+      Debug.Log("Furniture prefab poos: " + furniturePrefab.transform.position);
+      furniturePrefab.transform.position += adjustmentOnObj;
+      Debug.Log("Furniture prefab poos: " + furniturePrefab.transform.position);
       furniturePrefab.GetComponent<FurnitureLogic>().isSelected = true;
       furniturePrefab.GetComponent<FurnitureLogic>().parentBtn = this;
 
