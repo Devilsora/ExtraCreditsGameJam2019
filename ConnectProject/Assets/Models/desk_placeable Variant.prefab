@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6800730500980459000
+--- !u!1 &6956113217794655715
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6800730500980627928}
-  - component: {fileID: 2645686015262915014}
-  - component: {fileID: 5073601757273342213}
+  - component: {fileID: 6956113217794562499}
+  - component: {fileID: 5270556737071820699}
+  - component: {fileID: 2969255669026104178}
   m_Layer: 0
-  m_Name: chair2_placeable
+  m_Name: desk_placeable Variant
   m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6800730500980627928
+--- !u!4 &6956113217794562499
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6800730500980459000}
+  m_GameObject: {fileID: 6956113217794655715}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 19.795887, y: 16.194279, z: 19.982119}
+  m_LocalScale: {x: 0.5480748, y: 0.4483596, z: 0.5532309}
   m_Children:
-  - {fileID: 6800730500980627934}
+  - {fileID: 6956113217794562503}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2645686015262915014
+--- !u!82 &5270556737071820699
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6800730500980459000}
+  m_GameObject: {fileID: 6956113217794655715}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -129,13 +129,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5073601757273342213
+--- !u!114 &2969255669026104178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6800730500980459000}
+  m_GameObject: {fileID: 6956113217794655715}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88d6e5e394f820f4a8988e9240f3aed9, type: 3}
@@ -147,8 +147,8 @@ MonoBehaviour:
   highlighted: {fileID: 0}
   invalidLocation: {fileID: 0}
   parentBtn: {fileID: 0}
-  FurnitureSpawn: {fileID: 2645686015262915014}
---- !u!1 &6800730500980459006
+  FurnitureSpawn: {fileID: 5270556737071820699}
+--- !u!1 &6956113217794655719
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,45 +156,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6800730500980627934}
-  - component: {fileID: 6800730500981398008}
-  - component: {fileID: 6800730500982397752}
+  - component: {fileID: 6956113217794562503}
+  - component: {fileID: 6956113217797954017}
+  - component: {fileID: 6956113217796856609}
   m_Layer: 0
-  m_Name: chairB_geo
+  m_Name: desk_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6800730500980627934
+--- !u!4 &6956113217794562503
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6800730500980459006}
+  m_GameObject: {fileID: 6956113217794655719}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0328084, y: 0.0328084, z: 0.0328084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6800730500980627928}
+  m_Father: {fileID: 6956113217794562499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6800730500981398008
+--- !u!33 &6956113217797954017
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6800730500980459006}
-  m_Mesh: {fileID: 4300002, guid: eddb318c5d9c9524c83e340743df1b1c, type: 3}
---- !u!23 &6800730500982397752
+  m_GameObject: {fileID: 6956113217794655719}
+  m_Mesh: {fileID: 4300000, guid: f209b2b4269412c43a964bf3a124cc57, type: 3}
+--- !u!23 &6956113217796856609
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6800730500980459006}
+  m_GameObject: {fileID: 6956113217794655719}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -205,8 +205,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: eddb318c5d9c9524c83e340743df1b1c, type: 3}
-  - {fileID: 2100004, guid: eddb318c5d9c9524c83e340743df1b1c, type: 3}
+  - {fileID: 2100000, guid: f209b2b4269412c43a964bf3a124cc57, type: 3}
+  - {fileID: 2100002, guid: f209b2b4269412c43a964bf3a124cc57, type: 3}
+  - {fileID: 2100004, guid: f209b2b4269412c43a964bf3a124cc57, type: 3}
+  - {fileID: 2100006, guid: f209b2b4269412c43a964bf3a124cc57, type: 3}
+  - {fileID: 2100008, guid: f209b2b4269412c43a964bf3a124cc57, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

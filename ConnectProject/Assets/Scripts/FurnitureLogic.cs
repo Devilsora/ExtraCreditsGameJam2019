@@ -25,7 +25,7 @@ public class FurnitureLogic : MonoBehaviour
       if (isSelected)
       {
         canPlace = true;
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, gameObject.GetComponent<Renderer>().bounds.extents.z);
+        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, gameObject.transform.GetChild(0).GetComponent<Renderer>().bounds.extents.z);
 
         foreach (Collider col in colliders)
         {
