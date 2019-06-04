@@ -159,9 +159,10 @@ GameObject:
   - component: {fileID: 6800730500980627934}
   - component: {fileID: 6800730500981398008}
   - component: {fileID: 6800730500982397752}
+  - component: {fileID: 6474561884555952210}
   m_Layer: 0
   m_Name: chairB_geo
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,3 +227,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6474561884555952210
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800730500980459006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: eddb318c5d9c9524c83e340743df1b1c, type: 3}

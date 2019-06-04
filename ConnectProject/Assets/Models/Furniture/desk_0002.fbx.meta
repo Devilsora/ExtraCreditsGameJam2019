@@ -20,6 +20,8 @@ ModelImporter:
     3300002: desk_geo
     4300000: desk_geo
     4300002: desk_collider
+    6400000: desk_collider
+    6400002: desk_geo
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -53,7 +55,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

@@ -40,6 +40,12 @@ ModelImporter:
     4300006: pCube14
     4300008: pCube17
     4300010: eCentre_collider
+    6400000: console_geo
+    6400002: eCentre_collider
+    6400004: eCentreDesk_geo
+    6400006: monitor_geo
+    6400008: pCube14
+    6400010: pCube17
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -73,7 +79,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
