@@ -29,7 +29,7 @@ public class FurnitureLogic : MonoBehaviour
 
         foreach (Collider col in colliders)
         {
-          if (col.gameObject.tag == "Furniture" || col.gameObject.tag == "Wal")
+          if (col.gameObject.tag == "Furniture" || col.gameObject.tag == "Wal" || col.gameObject.tag == "Dirt")
           {
             Debug.Log("Found thing you can't place onto");
             canPlace = false;
@@ -48,27 +48,43 @@ public class FurnitureLogic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-          transform.position += Vector3.back * 6;
+          transform.position += Vector3.back * 5.78f;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-          transform.position += Vector3.forward * 6;
+          transform.position += Vector3.forward * 5.78f;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-          transform.eulerAngles += new Vector3(0, -90, 0);
+          transform.position += Vector3.right * 5.78f;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
+          transform.position += Vector3.left * 5.78f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+          transform.eulerAngles += new Vector3(0, -90, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
           transform.eulerAngles += new Vector3(0, 90, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+          parentBtn.usedQuantity--;
+          Destroy(gameObject);
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-          if (GetComponent<MeshRenderer>().material != invalidLocation)
+          if (canPlace)
           {
             isSelected = false;
             FurnitureSpawn.Play();
