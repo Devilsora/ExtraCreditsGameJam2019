@@ -1245,6 +1245,7 @@ MonoBehaviour:
   speed: 0
   distCheck: 4
   DirectionChangeSound: {fileID: 549994689}
+  AfraidSound: {fileID: 0}
 --- !u!64 &549994688
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3334,6 +3335,7 @@ MonoBehaviour:
   speed: 0
   distCheck: 4
   DirectionChangeSound: {fileID: 0}
+  AfraidSound: {fileID: 0}
 --- !u!65 &1823618525
 BoxCollider:
   m_ObjectHideFlags: 0

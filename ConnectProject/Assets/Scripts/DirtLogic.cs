@@ -10,6 +10,7 @@ public class DirtLogic : MonoBehaviour
     public ParticleSystem cleanParticles;
     public float particleSystemLifetime;
     private ParticleSystem particles;
+    public AudioSource dirtCleanSound;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class DirtLogic : MonoBehaviour
     {
       isDirty = false;
       particles = Instantiate(cleanParticles, gameObject.transform.position, Quaternion.identity, gameObject.transform.parent);
+      dirtCleanSound.Play();
     }
     else
     {
