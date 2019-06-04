@@ -8,8 +8,8 @@ public class UI_Cmds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+    Debug.Log(SceneManager.sceneCount + ": scene count");
+  }
 
     // Update is called once per frame
     void Update()
@@ -30,7 +30,7 @@ public class UI_Cmds : MonoBehaviour
 
     public void GoToMainMenu()
     {
-      SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+      SceneManager.LoadScene("TitleScreen");
     }
 
     public void ExitScreen(GameObject screen)
@@ -45,7 +45,7 @@ public class UI_Cmds : MonoBehaviour
 
     public void Play()
     {
-      SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+      SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()
