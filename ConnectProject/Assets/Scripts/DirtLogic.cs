@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class DirtLogic : MonoBehaviour
 {
-    public bool isDirty;
+  //y = -1.8
+
+    public bool isDirty = true;
     public ParticleSystem cleanParticles;
     public float particleSystemLifetime;
+    private ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
@@ -14,25 +17,29 @@ public class DirtLogic : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+  void OnTriggerEnter(Collider collision)
+  {
+    if (collision.gameObject.tag == "Roomba")
     {
-    //check if Roomba is above
-      if (isDirty)
-      {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.up, out hit, 1f))
-        {
-          if (hit.transform.gameObject.tag == "Roomba")
-          {
-            isDirty = false;
-          }
-        }
-      }
-      else
-      {
-        
-      }
-      
+      isDirty = false;
+      particles = Instantiate(cleanParticles, gameObject.transform.position, Quaternion.identity, gameObject.transform.parent);
     }
+    else
+    {
+      Debug.Log("Dirt not colliding with roomba: " + collision.gameObject.tag + "NAME: " + collision.gameObject.name);
+    }
+  }
+
+    // Update is called once per frame
+  void Update()
+  {
+    //check if Roomba is above
+    if (!isDirty)
+    {
+      GetComponent<SpriteRenderer>().enabled = false;
+      particleSystemLifetime -= Time.deltaTime;
+      if (particleSystemLifetime <= 0)
+        Destroy(particles);
+    }
+  }
 }

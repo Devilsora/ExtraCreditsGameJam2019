@@ -17,6 +17,11 @@ public class PowerButton : MonoBehaviour
       movement = roomba.GetComponent<RoombaMovement>();
     }
 
+  void OnMouseDown()
+  {
+    Debug.Log("Name: BUTTON");
+  }
+
     // Update is called once per frame
     void Update()
     {
@@ -35,7 +40,7 @@ public class PowerButton : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-          if (hit.transform.name == gameObject.name)
+          if (hit.transform.name == "PowerBtn")
           {
             movement.isON = !movement.isON;
             movement.moveFinished = !movement.moveFinished;
@@ -51,6 +56,22 @@ public class PowerButton : MonoBehaviour
               ActiveSound.Stop();
             }
           }
+          else if (hit.transform.GetChild(hit.transform.childCount - 1).name == "PowerBtn")
+          {
+            movement.isON = !movement.isON;
+            movement.moveFinished = !movement.moveFinished;
+            Debug.Log("Power swapped");
+            if (movement.isON)
+            {
+              OnSound.Play();
+              ActiveSound.Play();
+            }
+            else
+            {
+              OffSound.Play();
+              ActiveSound.Stop();
+            }
+        }
           else
           {
             Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name);

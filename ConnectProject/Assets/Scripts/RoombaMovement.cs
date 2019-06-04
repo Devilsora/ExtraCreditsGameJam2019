@@ -19,6 +19,8 @@ public class RoombaMovement : MonoBehaviour
                           //2 is South (y rotation = 180)
                           //3 is West (y rotation = 270)
 
+  public Orientation fearOrientation;
+
   private Vector3 moveNorth = Vector3.forward;
   private Vector3 moveEast = Vector3.right;
   private Vector3 moveSouth = Vector3.back;
@@ -164,7 +166,7 @@ public class RoombaMovement : MonoBehaviour
       else if (hit.transform.gameObject.tag == "FearFurniture")
       {
         isAfraid = true;
-        
+        fearOrientation = Orientation.North;
       }
       else
       {
@@ -184,6 +186,10 @@ public class RoombaMovement : MonoBehaviour
       {
         validOrientations[1] = true;
       }
+      else if (hit.transform.gameObject.tag == "FearFurniture")
+      {
+        isAfraid = true;
+      }
       else
       {
         Debug.Log("On east tag, hit object with tag " + hit.transform.gameObject.tag);
@@ -201,6 +207,10 @@ public class RoombaMovement : MonoBehaviour
       {
         validOrientations[2] = true;
       }
+      else if (hit.transform.gameObject.tag == "FearFurniture")
+      {
+        isAfraid = true;
+      }
       else
       {
         Debug.Log("On south tag, hit object with tag " + hit.transform.gameObject.tag);
@@ -216,6 +226,10 @@ public class RoombaMovement : MonoBehaviour
       if ((hit.transform.gameObject.tag != "Furniture" && hit.transform.gameObject.tag != "Wal"))
       {
         validOrientations[3] = true;
+      }
+      else if (hit.transform.gameObject.tag == "FearFurniture")
+      {
+        isAfraid = true;
       }
       else
       {
@@ -239,6 +253,26 @@ public class RoombaMovement : MonoBehaviour
 
     if (possibleOrientations.Count == 1)
       nextOrientation = possibleOrientations[0];
+
+    if (isAfraid)
+    {
+      switch (or)
+      {
+        case Orientation.North:
+          return Orientation.South;
+
+        case Orientation.East:
+          return Orientation.West;
+
+        case Orientation.South:
+          return Orientation.North;
+
+        case Orientation.West:
+          return Orientation.East;
+      }
+      
+
+    }
 
     else if (possibleOrientations.Count > 1 && possibleOrientations.Count < 4)
     {
@@ -309,6 +343,18 @@ public class RoombaMovement : MonoBehaviour
     checkedNextPositions = true;
 
     return nextOrientation;
+  }
+
+  public void OnTriggerEnter(Collider collider)
+  {
+    if (collider.gameObject.tag == "Dirt")
+    {
+      Debug.Log("Ran into dirt");
+    }
+    else
+    {
+      Debug.Log("Did not run into dirt");
+    }
   }
 
   
