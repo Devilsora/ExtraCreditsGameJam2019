@@ -40,6 +40,7 @@ public class RoombaMovement : MonoBehaviour
   float moveTimer = 0.0f;
 
   public AudioSource DirectionChangeSound;
+  public AudioSource AfraidSound;
 
   // Start is called before the first frame update
   void Start()  
@@ -256,6 +257,7 @@ public class RoombaMovement : MonoBehaviour
 
     if (isAfraid)
     {
+      AfraidSound.Play();
       switch (or)
       {
         case Orientation.North:
