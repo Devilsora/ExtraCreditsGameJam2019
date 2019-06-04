@@ -24,7 +24,7 @@ public class DirtLogic : MonoBehaviour
     {
       isDirty = false;
       particles = Instantiate(cleanParticles, gameObject.transform.position, Quaternion.identity, gameObject.transform.parent);
-      dirtCleanSound.Play();
+      //dirtCleanSound.Play();
     }
     else
     {

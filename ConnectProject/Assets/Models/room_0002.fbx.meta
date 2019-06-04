@@ -65,6 +65,16 @@ ModelImporter:
     4300014: pCube1
     4300016: roomFloor_geo
     4300018: roomWall_collider
+    6400000: doorknob_geo
+    6400002: pCube1
+    6400004: pCube2
+    6400006: pCube3
+    6400008: pCube4
+    6400010: roomDoor_geo
+    6400012: roomFloor_geo
+    6400014: roomWall_collider
+    6400016: roomWall_geo
+    6400018: windowLight_geo
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -98,7 +108,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

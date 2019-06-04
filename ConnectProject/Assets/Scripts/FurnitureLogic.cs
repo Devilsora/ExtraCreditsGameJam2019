@@ -112,7 +112,7 @@ public class FurnitureLogic : MonoBehaviour
             }
             else
             {
-              Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name);
+              Debug.Log("hit name: " + hit.transform.name + "  object name: " + gameObject.name + " in furniturelogic");
             }
 
           }
