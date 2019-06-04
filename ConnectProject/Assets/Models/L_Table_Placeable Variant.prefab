@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3383317767538782961}
   - component: {fileID: 4836745888126305232}
   - component: {fileID: 7203379285493389430}
+  - component: {fileID: 146938556918987078}
   m_Layer: 0
   m_Name: L_Table_Placeable Variant
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +153,20 @@ MonoBehaviour:
   invalidLocation: {fileID: 0}
   parentBtn: {fileID: 0}
   FurnitureSpawn: {fileID: 4836745888126305232}
+--- !u!64 &146938556918987078
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383317767538945745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &3383317767538945747
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,9 +178,10 @@ GameObject:
   - component: {fileID: 3383317767538782963}
   - component: {fileID: 3383317767538012883}
   - component: {fileID: 3383317767537012755}
+  - component: {fileID: 3771625038700523466}
   m_Layer: 0
   m_Name: console_geo
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +245,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3771625038700523466
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383317767538945747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: a3b12aa6a3fd1504ea96b14341462b15, type: 3}
 --- !u!1 &3383317767538945753
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,9 +270,10 @@ GameObject:
   - component: {fileID: 3383317767538782969}
   - component: {fileID: 3383317767538012885}
   - component: {fileID: 3383317767537012757}
+  - component: {fileID: 1828918442056983699}
   m_Layer: 0
   m_Name: monitor_geo
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,6 +338,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1828918442056983699
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383317767538945753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: a3b12aa6a3fd1504ea96b14341462b15, type: 3}
 --- !u!1 &3383317767538945755
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,9 +363,10 @@ GameObject:
   - component: {fileID: 3383317767538782971}
   - component: {fileID: 3383317767538012887}
   - component: {fileID: 3383317767537012759}
+  - component: {fileID: 8606937223597097639}
   m_Layer: 0
   m_Name: eCentreDesk_geo
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,6 +430,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8606937223597097639
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383317767538945755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: a3b12aa6a3fd1504ea96b14341462b15, type: 3}
 --- !u!1 &3383317767538945757
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,9 +455,10 @@ GameObject:
   - component: {fileID: 3383317767538782973}
   - component: {fileID: 3383317767538012889}
   - component: {fileID: 3383317767537012761}
+  - component: {fileID: 4916421315899511819}
   m_Layer: 0
   m_Name: pCube17
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,6 +522,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4916421315899511819
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383317767538945757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300008, guid: a3b12aa6a3fd1504ea96b14341462b15, type: 3}
 --- !u!1 &3383317767538945759
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,9 +547,10 @@ GameObject:
   - component: {fileID: 3383317767538782975}
   - component: {fileID: 3383317767538012891}
   - component: {fileID: 3383317767537012763}
+  - component: {fileID: 409719508231760440}
   m_Layer: 0
   m_Name: pCube14
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -538,3 +614,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &409719508231760440
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383317767538945759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300006, guid: a3b12aa6a3fd1504ea96b14341462b15, type: 3}

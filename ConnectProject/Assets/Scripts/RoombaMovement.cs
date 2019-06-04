@@ -234,6 +234,7 @@ public class RoombaMovement : MonoBehaviour
 
     if (Physics.Raycast(transform.position, orientationVectors[(int)or], out hit, distCheck))
     {
+      Debug.Log("Object in front of roomba");
       if (hit.transform.gameObject.tag == "FearFurniture")
       {
         isAfraid = true;
@@ -242,6 +243,10 @@ public class RoombaMovement : MonoBehaviour
       {
         isAfraid = false;
       }
+    }
+    else
+    {
+      Debug.Log("Hit nothing in current orientation");
     }
 
     Debug.Log("Valid orientations: " + validOrientations[0].ToString() + "  " + validOrientations[1].ToString() + "   " + validOrientations[2].ToString() + "   " + validOrientations[3].ToString());

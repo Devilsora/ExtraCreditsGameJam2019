@@ -159,9 +159,10 @@ GameObject:
   - component: {fileID: 5478264225605593932}
   - component: {fileID: 5478264225602726762}
   - component: {fileID: 5478264225603692970}
+  - component: {fileID: 8527021277959164292}
   m_Layer: 0
   m_Name: clown_geo
-  m_TagString: Untagged
+  m_TagString: FearFurniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,3 +230,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8527021277959164292
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478264225605629804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 0e18d43165ab1424283ab0b3b935f7c9, type: 3}

@@ -29,8 +29,9 @@ public class FurnitureLogic : MonoBehaviour
 
         foreach (Collider col in colliders)
         {
-          if (col.gameObject.tag == "Furniture" || col.gameObject.tag == "Wal" || col.gameObject.tag == "Dirt")
+          if ( (col.gameObject.tag == "Furniture" || col.gameObject.tag == "Wal" || col.gameObject.tag == "Dirt") && col.gameObject.transform.parent != gameObject.transform)
           {
+            Debug.Log("Collider data: " + col.gameObject.name);
             Debug.Log("Found thing you can't place onto");
             canPlace = false;
             break;
